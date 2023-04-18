@@ -57,9 +57,15 @@ public class PlayerMotor : MonoBehaviour {
         //Switch states
         sprinting = !sprinting;
         
-        if(sprinting){
-            speed = sprintSpeed;
+        if(isGrounded){
+            
+            if(sprinting){
+                speed = sprintSpeed;
+            } else{
+                speed = walkSpeed;
+            }
         } else{
+            // prevent speed from being locked to sprintSpeed
             speed = walkSpeed;
         }
     }
