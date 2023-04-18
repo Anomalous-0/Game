@@ -16,8 +16,8 @@ public abstract class Interactable : MonoBehaviour {
     
     //Called from player
     public void BaseInteract() {
-        // if(useEvents)
-        //     GetComponent<InteractionEvent>().OnInteract.Invoke();
+        if(useEvents)
+            GetComponent<InteractionEvent>().OnInteract.Invoke();
         Interact(); 
     }
 

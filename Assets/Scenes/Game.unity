@@ -97,8 +97,8 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
-  m_LightingSettings: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: 37304eacbe9f4ac479bb63f9cb0c2e67, type: 2}
+  m_LightingSettings: {fileID: 4890085278179872738, guid: 355b1c97ae1fdbd47b09d101f2c51e55, type: 2}
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -580,6 +580,7 @@ GameObject:
   - component: {fileID: 912590031}
   - component: {fileID: 912590030}
   - component: {fileID: 912590034}
+  - component: {fileID: 912590035}
   m_Layer: 6
   m_Name: Keypad
   m_TagString: Untagged
@@ -685,9 +686,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41d68c2e6ae1e744f9855388d41e185a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  useEvents: 0
-  message: Press [e] to open door
+  useEvents: 1
+  message: Press [e] to use door
   door: {fileID: 1278541121}
+--- !u!114 &912590035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 912590029}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 057c4088dc7c3684fbddd8c114eae202, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnInteract:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2043620928}
+        m_TargetAssemblyTypeName: UnityEngine.Renderer, UnityEngine
+        m_MethodName: set_material
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 2100000, guid: 8d095a08ec9269f4e9b6631421f05904, type: 2}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1278541121
 GameObject:
   m_ObjectHideFlags: 0
@@ -811,7 +839,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   useEvents: 0
-  message: Press [e] to open door
+  message: Press [e] to use door
   door: {fileID: 1278541121}
 --- !u!65 &1507567005
 BoxCollider:
@@ -1734,6 +1762,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2502472143990443333, guid: 48c61faa4db6a534388719fa85545552, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8d095a08ec9269f4e9b6631421f05904, type: 2}
     - target: {fileID: 7006434080641651263, guid: 48c61faa4db6a534388719fa85545552, type: 3}
       propertyPath: m_Name
       value: Player
