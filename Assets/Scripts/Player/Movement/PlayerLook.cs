@@ -10,6 +10,11 @@ public class PlayerLook : MonoBehaviour {
     public float xSense = 30f;
     public float ySense = 30f;
 
+    void Start() {
+    // Hides the cursor...
+        Cursor.visible = false; 
+    }
+
     public void ProcessLook(Vector2 input) {
         float mouseX = input.x;
         float mouseY = input.y;
