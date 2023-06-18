@@ -9,6 +9,7 @@ public class Interactor : MonoBehaviour {
     public LayerMask interactable;
     public Image interactIcon;
     private PlayerUI playerUI;
+    public int distance = 3;
     //private bool isHitting = false;
 
     Interactable interact;
@@ -22,7 +23,7 @@ public class Interactor : MonoBehaviour {
     void Update() {
         //playerUI.UpdateText(string.Empty);
         RaycastHit hit;
-        if(Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, 2, interactable)){
+        if(Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, distance, interactable)){
             // If touches interactable layer, then show icon
             interactIcon.enabled = true;
             //Debug.Log(hit.collider.name);
