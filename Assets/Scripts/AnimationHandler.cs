@@ -12,9 +12,10 @@ public class AnimationHandler : MonoBehaviour
         animator.SetBool(boolname,!animator.GetBool(boolname));
     }
 
-    public void PushButton(string name){
-        animator.SetBool(name,!animator.GetBool(name));
-        Invoke("ToggleBool", 2.0f);
+    public void SetTrue(string boolname){
+        animator.SetBool(boolname, true);
+    
+        
     }
 
 
