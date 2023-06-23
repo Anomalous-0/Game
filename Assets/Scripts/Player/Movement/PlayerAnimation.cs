@@ -5,8 +5,11 @@ using UnityEngine;
 public class PlayerAnimation : MonoBehaviour
 {
     Animator animator;
-    float velocityX = 0.0f;
-    float velocityZ = 0.0f;
+    private float velocityX = 0.0f;
+    private float velocityZ = 0.0f;
+    
+    
+    public float jump = 0.0f;
     public float acceleration = 2.0f;
     public float deceleration = 2.0f;
     public float maxWalkV = 0.5f;
@@ -14,15 +17,23 @@ public class PlayerAnimation : MonoBehaviour
 
     int VelocityZHash;
     int VelocityXHash;
+    int jumpHash;
     // Start is called before the first frame update
     void Start() {
      animator = GetComponent<Animator>();    
      VelocityXHash = Animator.StringToHash("Velocity X");
      VelocityZHash = Animator.StringToHash("Velocity Z");
+     jumpHash = Animator.StringToHash("Jump");
+    }
+
+    public float getJump(){
+        return jump;
     }
 
     //Handles acceleration and deceleration
     void changeVelocity(bool forwardPressed, bool leftPressed, bool rightPressed, bool backPressed, bool runPressed, float currentMaxVelocity){
+
+
         if(forwardPressed && velocityZ < currentMaxVelocity){
             velocityZ += Time.deltaTime * acceleration;
         }
@@ -138,9 +149,12 @@ public class PlayerAnimation : MonoBehaviour
         bool leftPressed = Input.GetKey(KeyCode.A);
         bool rightPressed = Input.GetKey(KeyCode.D);
         bool backPressed = Input.GetKey(KeyCode.S);
+        bool spacePressed = Input.GetKey(KeyCode.Space);
         //Set current maxvelocity
         //Terniary operator: sets variable equal to the first if the run is true, else sets teh second option
         
+
+
         float currentMaxVelocity = runPressed ? maxRunV : maxWalkV;
         
         changeVelocity(forwardPressed, leftPressed, rightPressed, backPressed, runPressed, currentMaxVelocity);
@@ -148,6 +162,7 @@ public class PlayerAnimation : MonoBehaviour
         
         animator.SetFloat(VelocityZHash, velocityZ);
         animator.SetFloat(VelocityXHash, velocityX);
+        animator.SetFloat(jumpHash, jump);
 
     }
 }

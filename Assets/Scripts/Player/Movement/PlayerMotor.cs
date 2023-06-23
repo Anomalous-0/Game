@@ -16,6 +16,10 @@ public class PlayerMotor : MonoBehaviour {
     public float jumpHeight = 1f;
     private bool sprinting = false;
 
+    int isJumpingHash;
+    Animator animator;
+
+    PlayerAnimation playerAnimation;
     // private bool crouching = false;
     // public float crouchTimer = 1;
     // private bool lerpCrouch = false;
@@ -23,10 +27,13 @@ public class PlayerMotor : MonoBehaviour {
 
     void Start() {
         controller = GetComponent<CharacterController>();
+        animator = GetComponent<Animator>();
+        isJumpingHash = Animator.StringToHash("isJumping");  
     }
 
     // Update is called once per frame
     void Update() {
+        bool space = Input.GetKey(KeyCode.Space);
         isGrounded = controller.isGrounded;
         // ** Unused crouch code **
 
@@ -83,14 +90,14 @@ public class PlayerMotor : MonoBehaviour {
         playerVelocity.y += gravity * Time.deltaTime;
         if(isGrounded && playerVelocity.y < 0) {
             playerVelocity.y = -2f;
-            // animator.SetBool(isJumpingHash, false);
+            animator.SetBool(isJumpingHash, false);
         }
         controller.Move(playerVelocity * Time.deltaTime);
         //Debug.Log(playerVelocity.y);
     }
 
     public void Jump() { 
-        //animator.SetBool(isJumpingHash, true);
+        animator.SetBool(isJumpingHash, true);
         if(isGrounded){ 
             playerVelocity.y = Mathf.Sqrt(jumpHeight * -3.0f * gravity);
         }
