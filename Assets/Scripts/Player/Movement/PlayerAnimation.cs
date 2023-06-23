@@ -17,18 +17,14 @@ public class PlayerAnimation : MonoBehaviour
 
     int VelocityZHash;
     int VelocityXHash;
-    int jumpHash;
+    
     // Start is called before the first frame update
     void Start() {
      animator = GetComponent<Animator>();    
      VelocityXHash = Animator.StringToHash("Velocity X");
      VelocityZHash = Animator.StringToHash("Velocity Z");
-     jumpHash = Animator.StringToHash("Jump");
     }
 
-    public float getJump(){
-        return jump;
-    }
 
     //Handles acceleration and deceleration
     void changeVelocity(bool forwardPressed, bool leftPressed, bool rightPressed, bool backPressed, bool runPressed, float currentMaxVelocity){
@@ -162,7 +158,6 @@ public class PlayerAnimation : MonoBehaviour
         
         animator.SetFloat(VelocityZHash, velocityZ);
         animator.SetFloat(VelocityXHash, velocityX);
-        animator.SetFloat(jumpHash, jump);
 
     }
 }

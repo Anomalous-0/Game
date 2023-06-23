@@ -1781,7 +1781,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ca3e1bf2212d9d439236d556c5d1d3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
+  speed: 4
   walkSpeed: 3
   sprintSpeed: 8
   crouchSpeed: 1
@@ -1866,7 +1866,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: bcbb5e141153536459780b5d73b10bc3, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 0
+  m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
   m_WarningMessage: 
@@ -2164,7 +2164,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 2
+  m_Lightmapping: 4
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -2648,7 +2648,7 @@ MonoBehaviour:
   m_MoveAction: {fileID: 4881810659502693231, guid: 5a31d576a733a5147bc0f76edcf498ce, type: 3}
   m_SubmitAction: {fileID: 4728167626216613909, guid: 5a31d576a733a5147bc0f76edcf498ce, type: 3}
   m_CancelAction: {fileID: 2857125956661888036, guid: 5a31d576a733a5147bc0f76edcf498ce, type: 3}
-  m_LeftClickAction: {fileID: 5185279000691776427, guid: 5a31d576a733a5147bc0f76edcf498ce, type: 3}
+  m_LeftClickAction: {fileID: -4738281102718644797, guid: 5a31d576a733a5147bc0f76edcf498ce, type: 3}
   m_MiddleClickAction: {fileID: -855336145541493558, guid: 5a31d576a733a5147bc0f76edcf498ce, type: 3}
   m_RightClickAction: {fileID: 4789561775778791465, guid: 5a31d576a733a5147bc0f76edcf498ce, type: 3}
   m_ScrollWheelAction: {fileID: -5256391174513104662, guid: 5a31d576a733a5147bc0f76edcf498ce, type: 3}
